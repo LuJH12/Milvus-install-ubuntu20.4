@@ -1,5 +1,3 @@
-@[TOC]
-
 # Milvus-install-ubuntu20.4
 此文主要讲述如何在ubuntu20.4里安装Milvus
 
