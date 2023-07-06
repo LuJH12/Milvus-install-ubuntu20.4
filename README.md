@@ -29,4 +29,29 @@ docker.service - Docker Application Container Engine
 `sudo usermod -aG docker $USER`
 
 # 安装Milvus
+此处参考[官网文档](https://milvus.io/docs/install_standalone-docker.md)，详细可看参考文章，这里只作简要安装说明。
 
+依次运行下列代码：
+1. `wget https://github.com/milvus-io/milvus/releases/download/v2.2.11/milvus-standalone-docker-compose.yml -O docker-compose.yml`
+2. `sudo docker-compose up -d`
+
+等安装完成后，即可看到
+```
+Creating milvus-etcd  ... done
+Creating milvus-minio ... done
+Creating milvus-standalone ... done
+```
+
+你也可以查看容器状态
+
+`docker-compose ps`
+
+如果成功的话，会显示下列信息：
+```
+      Name                     Command                  State                            Ports
+--------------------------------------------------------------------------------------------------------------------
+milvus-etcd         etcd -advertise-client-url ...   Up             2379/tcp, 2380/tcp
+milvus-minio        /usr/bin/docker-entrypoint ...   Up (healthy)   9000/tcp
+milvus-standalone   /tini -- milvus run standalone   Up             0.0.0.0:19530->19530/tcp, 0.0.0.0:9091->9091/tcp
+
+```
