@@ -25,4 +25,8 @@ docker.service - Docker Application Container Engine
 ```
 ## 设定非root用户身份执行Docker
 输入下述代码，其中`$USER`替换成当前用户名：
+
 `sudo usermod -aG docker $USER`
+
+# 安装Milvus
+
